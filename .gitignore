@@ -1,0 +1,13 @@
+# Environments
+.env
+.venv
+env/
+venv/
+translitvenv/
+
+# other files
+__pycache__
+.ypynb_checkpoints
+config.py 
+mylog.log
+test.ipynb
