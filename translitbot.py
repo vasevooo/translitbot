@@ -46,7 +46,7 @@ def transliterate(text):
     translit_map = {
        
         'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Е': 'E', 'Ё': 'YO', 'Ж': 'Zh', 'З': 'Z',
-        'И': 'I', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R',
+        'И': 'I', 'Й': 'I', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R',
         'С': 'S', 'Т': 'T', 'У': 'U', 'Ф': 'F', 'Х': 'KH', 'Ц': 'TS', 'Ч': 'CH', 'Ш': 'SH', 'Щ': 'SHCH',
         'Ъ': 'IE', 'Ы': 'Y', 'Ь': '', 'Э': 'IE', 'Ю': 'IU', 'Я': 'IA'
     }
@@ -61,10 +61,10 @@ def transliterate(text):
     return result
 
 
-# Check if all characters in the text are in the Cyrillic Unicode range
+# Check if all characters in the text are in the Cyrillic Unicode range or '-'
 def is_cyrillic(text):
     text = text.replace (' ', '')
-    return all(ord(char) >= 0x0400 and ord(char) <= 0x04FF for char in text)
+    return all(ord(char) >= 0x0400 and ord(char) <= 0x04FF or ord(char) == 45 for char in text)
 
 
 
